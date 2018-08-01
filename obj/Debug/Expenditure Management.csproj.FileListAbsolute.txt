@@ -1,0 +1,16 @@
+C:\Users\Hoang Anh\AppData\Local\Temporary Projects\Expenditure Management\bin\Debug\Expenditure Management.exe.config
+D:\VS2013\Projects\C#\Expenditure Management\Expenditure Management\bin\Debug\Expenditure Management.exe.config
+D:\VS2013\Projects\C#\Expenditure Management\Expenditure Management\bin\Debug\Expenditure Management.exe
+D:\VS2013\Projects\C#\Expenditure Management\Expenditure Management\bin\Debug\Expenditure Management.pdb
+D:\VS2013\Projects\C#\Expenditure Management\Expenditure Management\bin\Debug\en\Expenditure Management.resources.dll
+D:\VS2013\Projects\C#\Expenditure Management\Expenditure Management\obj\Debug\Expenditure_Management.Form1.resources
+D:\VS2013\Projects\C#\Expenditure Management\Expenditure Management\obj\Debug\Expenditure_Management.Form2.resources
+D:\VS2013\Projects\C#\Expenditure Management\Expenditure Management\obj\Debug\Expenditure_Management.Form3.resources
+D:\VS2013\Projects\C#\Expenditure Management\Expenditure Management\obj\Debug\Expenditure_Management.Properties.Resources.resources
+D:\VS2013\Projects\C#\Expenditure Management\Expenditure Management\obj\Debug\Expenditure_Management.Form3.en.resources
+D:\VS2013\Projects\C#\Expenditure Management\Expenditure Management\obj\Debug\Expenditure Management.csproj.GenerateResource.Cache
+D:\VS2013\Projects\C#\Expenditure Management\Expenditure Management\obj\Debug\Expenditure Management.csproj.CoreCompileInputs.cache
+D:\VS2013\Projects\C#\Expenditure Management\Expenditure Management\obj\Debug\en\Expenditure Management.resources.dll
+D:\VS2013\Projects\C#\Expenditure Management\Expenditure Management\obj\Debug\Expenditure Management.exe
+D:\VS2013\Projects\C#\Expenditure Management\Expenditure Management\obj\Debug\Expenditure Management.pdb
+D:\VS2013\Projects\C#\Expenditure Management\Expenditure Management\obj\Debug\Expenditure Management.csprojResolveAssemblyReference.cache
