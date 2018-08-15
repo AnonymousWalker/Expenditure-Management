@@ -15,7 +15,6 @@ namespace Expenditure_Management
     {
         public delegate void Mydelg();
         public Mydelg refGetAllItems;
-        string query;
         public Form2()
         {
             InitializeComponent();
@@ -44,8 +43,8 @@ namespace Expenditure_Management
                         conn.Close();
                         if (check > 0)
                         {
-                            this.refGetAllItems();
-                            this.Close();
+                            refGetAllItems();
+                            Close();
                         }
                         else MessageBox.Show("Not inserted :v", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
