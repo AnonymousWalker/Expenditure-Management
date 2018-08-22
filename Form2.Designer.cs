@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.Notelb = new System.Windows.Forms.Label();
-            this.noteTxt = new System.Windows.Forms.TextBox();
+            this.toDate = new System.Windows.Forms.TextBox();
             this.Datelb = new System.Windows.Forms.Label();
-            this.DateBox = new System.Windows.Forms.TextBox();
+            this.fromDate = new System.Windows.Forms.TextBox();
             this.Cancel = new System.Windows.Forms.Button();
             this.Addbtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,24 +52,23 @@
             this.Notelb.AutoSize = true;
             this.Notelb.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Notelb.ForeColor = System.Drawing.Color.Blue;
-            this.Notelb.Location = new System.Drawing.Point(181, 126);
+            this.Notelb.Location = new System.Drawing.Point(180, 172);
             this.Notelb.Name = "Notelb";
-            this.Notelb.Size = new System.Drawing.Size(45, 20);
+            this.Notelb.Size = new System.Drawing.Size(29, 20);
             this.Notelb.TabIndex = 22;
-            this.Notelb.Text = "Note:";
+            this.Notelb.Text = "To:";
             this.Notelb.Click += new System.EventHandler(this.Notelb_Click);
             // 
-            // noteTxt
+            // toDate
             // 
-            this.noteTxt.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.noteTxt.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noteTxt.Location = new System.Drawing.Point(185, 149);
-            this.noteTxt.Multiline = true;
-            this.noteTxt.Name = "noteTxt";
-            this.noteTxt.Size = new System.Drawing.Size(116, 47);
-            this.noteTxt.TabIndex = 3;
-            this.noteTxt.TextChanged += new System.EventHandler(this.noteTxt_TextChanged);
-            this.noteTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.noteTxt_KeyDown);
+            this.toDate.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.toDate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toDate.Location = new System.Drawing.Point(211, 169);
+            this.toDate.Name = "toDate";
+            this.toDate.Size = new System.Drawing.Size(90, 27);
+            this.toDate.TabIndex = 3;
+            this.toDate.TextChanged += new System.EventHandler(this.noteTxt_TextChanged);
+            this.toDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.noteTxt_KeyDown);
             // 
             // Datelb
             // 
@@ -77,24 +76,24 @@
             this.Datelb.AutoSize = true;
             this.Datelb.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Datelb.ForeColor = System.Drawing.Color.Blue;
-            this.Datelb.Location = new System.Drawing.Point(55, 170);
+            this.Datelb.Location = new System.Drawing.Point(46, 171);
             this.Datelb.Name = "Datelb";
-            this.Datelb.Size = new System.Drawing.Size(45, 21);
+            this.Datelb.Size = new System.Drawing.Size(50, 21);
             this.Datelb.TabIndex = 20;
-            this.Datelb.Text = "Date:";
+            this.Datelb.Text = "From:";
             this.Datelb.Click += new System.EventHandler(this.Datelb_Click);
             // 
-            // DateBox
+            // fromDate
             // 
-            this.DateBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.DateBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateBox.Location = new System.Drawing.Point(102, 169);
-            this.DateBox.Name = "DateBox";
-            this.DateBox.Size = new System.Drawing.Size(72, 27);
-            this.DateBox.TabIndex = 2;
-            this.DateBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.DateBox.TextChanged += new System.EventHandler(this.DateBox_TextChanged);
-            this.DateBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DateBox_KeyDown);
+            this.fromDate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.fromDate.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fromDate.Location = new System.Drawing.Point(102, 169);
+            this.fromDate.Name = "fromDate";
+            this.fromDate.Size = new System.Drawing.Size(75, 27);
+            this.fromDate.TabIndex = 2;
+            this.fromDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.fromDate.TextChanged += new System.EventHandler(this.DateBox_TextChanged);
+            this.fromDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DateBox_KeyDown);
             // 
             // Cancel
             // 
@@ -132,11 +131,11 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(60, 126);
+            this.label2.Location = new System.Drawing.Point(35, 128);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 21);
+            this.label2.Size = new System.Drawing.Size(61, 21);
             this.label2.TabIndex = 16;
-            this.label2.Text = "Pay:";
+            this.label2.Text = "Earned:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
@@ -144,11 +143,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(54, 83);
+            this.label1.Location = new System.Drawing.Point(44, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 21);
+            this.label1.Size = new System.Drawing.Size(52, 21);
             this.label1.TabIndex = 15;
-            this.label1.Text = "Item:";
+            this.label1.Text = "Week:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // PayBox
@@ -236,9 +235,9 @@
             this.Controls.Add(this.dateInstr);
             this.Controls.Add(this.Clearbtn);
             this.Controls.Add(this.Notelb);
-            this.Controls.Add(this.noteTxt);
+            this.Controls.Add(this.toDate);
             this.Controls.Add(this.Datelb);
-            this.Controls.Add(this.DateBox);
+            this.Controls.Add(this.fromDate);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Addbtn);
             this.Controls.Add(this.label2);
@@ -260,9 +259,9 @@
         #endregion
 
         private System.Windows.Forms.Label Notelb;
-        private System.Windows.Forms.TextBox noteTxt;
+        private System.Windows.Forms.TextBox toDate;
         private System.Windows.Forms.Label Datelb;
-        private System.Windows.Forms.TextBox DateBox;
+        private System.Windows.Forms.TextBox fromDate;
         private System.Windows.Forms.Button Cancel;
         private System.Windows.Forms.Button Addbtn;
         private System.Windows.Forms.Label label2;

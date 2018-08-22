@@ -26,7 +26,7 @@ namespace Expenditure_Management
                 MessageBox.Show("The first 2 fields cannot be empty :v", "Null Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             else
             {
-                    if(string.IsNullOrEmpty(DateBox.Text)) DateBox.Text= DateTime.Today.ToShortDateString();
+                    if(string.IsNullOrEmpty(fromDate.Text)) fromDate.Text= DateTime.Today.ToShortDateString();
                 //try
                     string query = "Insert into ExpenditureTable (Item,Cash,[Date Purchase],[Note]) values (@item,@cash,@date,@note)";
 
@@ -36,8 +36,8 @@ namespace Expenditure_Management
                         conn.Open();
                         cmd.Parameters.Add("@item", OleDbType.VarChar, 30).Value = ItemNameBox.Text;
                         cmd.Parameters.Add("@cash", OleDbType.Double, 10).Value = PayBox.Text;
-                        cmd.Parameters.Add("@date", OleDbType.Date, 20).Value = DateBox.Text;
-                        cmd.Parameters.Add("@item", OleDbType.VarChar, 50).Value =  noteTxt.Text;
+                        cmd.Parameters.Add("@date", OleDbType.Date, 20).Value = fromDate.Text;
+                        cmd.Parameters.Add("@item", OleDbType.VarChar, 50).Value =  toDate.Text;
                         
                         int check = cmd.ExecuteNonQuery(); //execute cmd
                         conn.Close();
@@ -61,8 +61,8 @@ namespace Expenditure_Management
         {
             ItemNameBox.Text = "";
             PayBox.Text = "";
-            DateBox.Text = "";
-            noteTxt.Text = "";
+            fromDate.Text = "";
+            toDate.Text = "";
             ItemNameBox.Focus();
         }
 

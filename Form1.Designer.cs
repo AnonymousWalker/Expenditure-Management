@@ -29,55 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.RemainedCash = new System.Windows.Forms.Label();
-            this.Total = new System.Windows.Forms.Label();
             this.RemoveBtn = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.RefreshBtn = new System.Windows.Forms.Button();
             this.FilterByMonthTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.InitialTxt = new System.Windows.Forms.TextBox();
             this.Edit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.FilterByDateTxt = new System.Windows.Forms.TextBox();
             this.SumTxt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // RemainedCash
-            // 
-            this.RemainedCash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.RemainedCash.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.RemainedCash.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.RemainedCash.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RemainedCash.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.RemainedCash.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RemainedCash.Location = new System.Drawing.Point(589, 423);
-            this.RemainedCash.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.RemainedCash.Name = "RemainedCash";
-            this.RemainedCash.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.RemainedCash.Size = new System.Drawing.Size(94, 28);
-            this.RemainedCash.TabIndex = 14;
-            this.RemainedCash.Text = "0";
-            this.RemainedCash.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.RemainedCash.Click += new System.EventHandler(this.RemainedCash_Click);
-            // 
-            // Total
-            // 
-            this.Total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Total.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.Total.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total.ForeColor = System.Drawing.Color.DarkRed;
-            this.Total.Location = new System.Drawing.Point(583, 397);
-            this.Total.Name = "Total";
-            this.Total.Size = new System.Drawing.Size(101, 25);
-            this.Total.TabIndex = 13;
-            this.Total.Text = "$ Remained:";
-            this.Total.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Total.Click += new System.EventHandler(this.Total_Click);
             // 
             // RemoveBtn
             // 
@@ -178,34 +140,6 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DarkRed;
-            this.label2.Location = new System.Drawing.Point(587, 268);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 24);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "$ Initial:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // InitialTxt
-            // 
-            this.InitialTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.InitialTxt.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.InitialTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.InitialTxt.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.InitialTxt.Location = new System.Drawing.Point(592, 296);
-            this.InitialTxt.Name = "InitialTxt";
-            this.InitialTxt.Size = new System.Drawing.Size(89, 23);
-            this.InitialTxt.TabIndex = 3;
-            this.InitialTxt.Text = "0";
-            this.InitialTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.InitialTxt.TextChanged += new System.EventHandler(this.InitialTxt_TextChanged);
-            // 
             // Edit
             // 
             this.Edit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -230,49 +164,22 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkRed;
-            this.label3.Location = new System.Drawing.Point(589, 332);
+            this.label3.Location = new System.Drawing.Point(586, 369);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 24);
             this.label3.TabIndex = 24;
-            this.label3.Text = "$ Sum";
+            this.label3.Text = "Total";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label4.BackColor = System.Drawing.Color.LavenderBlush;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(189, 433);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 22);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Filter by date:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // FilterByDateTxt
-            // 
-            this.FilterByDateTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.FilterByDateTxt.BackColor = System.Drawing.Color.LavenderBlush;
-            this.FilterByDateTxt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.FilterByDateTxt.Location = new System.Drawing.Point(307, 432);
-            this.FilterByDateTxt.Name = "FilterByDateTxt";
-            this.FilterByDateTxt.Size = new System.Drawing.Size(78, 26);
-            this.FilterByDateTxt.TabIndex = 5;
-            this.FilterByDateTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.FilterByDateTxt.TextChanged += new System.EventHandler(this.FilterByDateTxt_TextChanged);
-            this.FilterByDateTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterByDateTxt_KeyDown);
             // 
             // SumTxt
             // 
             this.SumTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.SumTxt.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.SumTxt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.SumTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SumTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SumTxt.ForeColor = System.Drawing.Color.Black;
             this.SumTxt.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SumTxt.Location = new System.Drawing.Point(590, 359);
+            this.SumTxt.Location = new System.Drawing.Point(587, 396);
             this.SumTxt.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.SumTxt.Name = "SumTxt";
             this.SumTxt.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -290,17 +197,11 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(690, 461);
             this.Controls.Add(this.SumTxt);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.FilterByDateTxt);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.InitialTxt);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FilterByMonthTxt);
             this.Controls.Add(this.RefreshBtn);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.RemainedCash);
-            this.Controls.Add(this.Total);
             this.Controls.Add(this.RemoveBtn);
             this.Controls.Add(this.Edit);
             this.Controls.Add(this.Add);
@@ -308,7 +209,7 @@
             this.Location = new System.Drawing.Point(200, 50);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "My Expenditure";
+            this.Text = "Earnings";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -317,21 +218,14 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label RemainedCash;
-        private System.Windows.Forms.Label Total;
         private System.Windows.Forms.Button RemoveBtn;
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button RefreshBtn;
         private System.Windows.Forms.TextBox FilterByMonthTxt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox InitialTxt;
         private System.Windows.Forms.Button Edit;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox FilterByDateTxt;
         private System.Windows.Forms.Label SumTxt;
     }
 }

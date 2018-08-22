@@ -40,15 +40,6 @@ namespace Expenditure_Management
             }
             dataGridView1.DataSource = table;
             SumTxt.Text = "$" + CalculateSum().ToString();
-            RemainedCash.Text = "$"+ CalculateRemainer().ToString();
-        }
-
-        private double CalculateRemainer()
-        {
-            double remain = 0, Total;
-            Total = CalculateSum();
-            remain = Convert.ToDouble(InitialTxt.Text) - Total;
-            return remain;
         }
 
         private double CalculateSum()
@@ -146,29 +137,11 @@ namespace Expenditure_Management
             GetData();
         }
 
-        private void InitialTxt_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                
-                RemainedCash.Text = "$" + CalculateRemainer().ToString();
-            }
-            catch (Exception ex)
-            {
-                RemainedCash.Text = "0";
-            }
-
-        }
-
         private void FilterByDateTxt_TextChanged(object sender, EventArgs e)
         {
             
         }
 
-        private void RemainedCash_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Total_Click(object sender, EventArgs e)
         {
@@ -188,37 +161,6 @@ namespace Expenditure_Management
         private void label2_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void FilterByDateTxt_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (string.IsNullOrEmpty(FilterByDateTxt.Text))
-                {
-                    GetData();
-                    return;
-                }
-                try
-                {
-                    //DateTime inputDate = Convert.ToDateTime(FilterByDateTxt.Text);
-                    string query = "select * from ExpenditureTable where [Date Purchase] like '" + FilterByDateTxt.Text +"'";
-                    using (connection = new OleDbConnection())  //close connection when finish
-                    {
-                        connection.ConnectionString = connectionString;
-                        connection.Open();
-                        adapter = new OleDbDataAdapter(query, connection);
-
-                        DataTable dt = new DataTable();
-                        adapter.Fill(dt);
-                        dataGridView1.DataSource = dt;
-                        connection.Close();
-                    }
-                }
-                catch (Exception ex)
-                { MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-
-            }
         }
 
         private void FilterByMonthTxt_KeyDown(object sender, KeyEventArgs e)
