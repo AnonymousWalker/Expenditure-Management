@@ -67,8 +67,7 @@
             this.toDate.Name = "toDate";
             this.toDate.Size = new System.Drawing.Size(90, 27);
             this.toDate.TabIndex = 3;
-            this.toDate.TextChanged += new System.EventHandler(this.noteTxt_TextChanged);
-            this.toDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.noteTxt_KeyDown);
+            this.toDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NoteTxt_KeyDown);
             // 
             // Datelb
             // 

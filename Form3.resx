@@ -267,6 +267,9 @@
   <data name="dateTxt.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="dateTxt.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
   <data name="&gt;&gt;dateTxt.Name" xml:space="preserve">
     <value>dateTxt</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="CashTxt.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="CashTxt.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="&gt;&gt;CashTxt.Name" xml:space="preserve">
     <value>CashTxt</value>

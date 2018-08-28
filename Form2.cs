@@ -37,7 +37,7 @@ namespace Expenditure_Management
                         cmd.Parameters.Add("@item", OleDbType.VarChar, 30).Value = ItemNameBox.Text;
                         cmd.Parameters.Add("@cash", OleDbType.Double, 10).Value = PayBox.Text;
                         cmd.Parameters.Add("@date", OleDbType.Date, 20).Value = fromDate.Text;
-                        cmd.Parameters.Add("@item", OleDbType.VarChar, 50).Value =  toDate.Text;
+                        cmd.Parameters.Add("@item", OleDbType.VarChar, 50).Value =  NoteTxt.Text;
                         
                         int check = cmd.ExecuteNonQuery(); //execute cmd
                         conn.Close();
@@ -62,7 +62,7 @@ namespace Expenditure_Management
             ItemNameBox.Text = "";
             PayBox.Text = "";
             fromDate.Text = "";
-            toDate.Text = "";
+            NoteTxt.Text = "";
             ItemNameBox.Focus();
         }
 
@@ -86,14 +86,9 @@ namespace Expenditure_Management
             if (e.KeyCode == Keys.Escape) this.Close();
         }
 
-        private void noteTxt_KeyDown(object sender, KeyEventArgs e)
+        private void NoteTxt_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape) this.Close();
-        }
-
-        private void noteTxt_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Datelb_Click(object sender, EventArgs e)

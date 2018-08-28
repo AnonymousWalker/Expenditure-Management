@@ -24,7 +24,7 @@ namespace Expenditure_Management
             if (rowdata.Cells[3].Value.ToString() != "")
             {
                 var dateValue = Convert.ToDateTime(rowdata.Cells[3].Value);
-                dateTxt.Text = String.Format("{0:dd/MM/yyyy}", dateValue);
+                dateTxt.Text = string.Format("{0}/{1}/{2}", dateValue.Day, dateValue.Month, dateValue.Year%100);
             }
             noteTxt.Text = rowdata.Cells[4].Value.ToString();
         }
