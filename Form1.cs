@@ -35,9 +35,9 @@ namespace Expenditure_Management
                 connection.ConnectionString = connectionString;
                 connection.Open();
                 adapter = new OleDbDataAdapter(query,connection);
-                DataSet ds = new DataSet();
-                adapter.Fill(ds);
-                //adapter.Fill(table);
+                    //DataSet ds = new DataSet();
+                    //adapter.Fill(ds);
+                adapter.Fill(table);
                 connection.Close();
             }
             dataGridView1.DataSource = table;

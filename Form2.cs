@@ -22,11 +22,11 @@ namespace Expenditure_Management
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(ItemNameBox.Text) || string.IsNullOrEmpty(PayBox.Text))
+            if (string.IsNullOrEmpty(ItemNameBox.Text) || string.IsNullOrEmpty(CashBox.Text))
                 MessageBox.Show("The first 2 fields cannot be empty :v", "Null Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             else
             {
-                    if(string.IsNullOrEmpty(fromDate.Text)) fromDate.Text= DateTime.Today.ToShortDateString();
+                    if(string.IsNullOrEmpty(DateBox.Text)) DateBox.Text= DateTime.Today.ToShortDateString();
                 //try
                     string query = "Insert into ExpenditureTable (Item,Cash,[Date Purchase],[Note]) values (@item,@cash,@date,@note)";
 
@@ -35,9 +35,9 @@ namespace Expenditure_Management
                         OleDbCommand cmd = new OleDbCommand(query, conn);
                         conn.Open();
                         cmd.Parameters.Add("@item", OleDbType.VarChar, 30).Value = ItemNameBox.Text;
-                        cmd.Parameters.Add("@cash", OleDbType.Double, 10).Value = PayBox.Text;
-                        cmd.Parameters.Add("@date", OleDbType.Date, 20).Value = fromDate.Text;
-                        cmd.Parameters.Add("@item", OleDbType.VarChar, 50).Value =  NoteTxt.Text;
+                        cmd.Parameters.Add("@cash", OleDbType.Double, 10).Value = CashBox.Text;
+                        cmd.Parameters.Add("@date", OleDbType.Date, 20).Value = DateBox.Text;
+                        cmd.Parameters.Add("@item", OleDbType.VarChar, 50).Value =  NoteBox.Text;
                         
                         int check = cmd.ExecuteNonQuery(); //execute cmd
                         conn.Close();
@@ -60,9 +60,8 @@ namespace Expenditure_Management
         private void Clearbtn_Click(object sender, EventArgs e)
         {
             ItemNameBox.Text = "";
-            PayBox.Text = "";
-            fromDate.Text = "";
-            NoteTxt.Text = "";
+            CashBox.Text = "";
+            NoteBox.Text = "";
             ItemNameBox.Focus();
         }
 
@@ -76,20 +75,7 @@ namespace Expenditure_Management
             if (e.KeyCode == Keys.Escape) this.Close();
         }
 
-        private void PayBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape) this.Close();
-        }
-
-        private void DateBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape) this.Close();
-        }
-
-        private void NoteTxt_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape) this.Close();
-        }
+        
 
         private void Datelb_Click(object sender, EventArgs e)
         {
@@ -116,7 +102,7 @@ namespace Expenditure_Management
 
         }
 
-        private void PayBox_TextChanged(object sender, EventArgs e)
+        private void CashBox_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -139,6 +125,21 @@ namespace Expenditure_Management
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void DateBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape) this.Close();
+        }
+
+        private void NoteBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape) this.Close();
+        }
+
+        private void CashBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape) this.Close();
         }
     }
 }
