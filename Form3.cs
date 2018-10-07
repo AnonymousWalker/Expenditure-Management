@@ -12,7 +12,7 @@ namespace Expenditure_Management
 {
     public partial class Form3 : Form
     {
-        public delegate void Mydelg();
+        public delegate void Mydelg(string query = null);
         public Mydelg refGetAllItems;
         private DataGridViewRow rowData;
         public Form3(DataGridViewRow rowdata)

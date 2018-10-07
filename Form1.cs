@@ -25,11 +25,11 @@ namespace Expenditure_Management
             dataGridView1.RowHeadersDefaultCellStyle.Font = new Font("Calibri", 11);
         }
 
-        void GetData()
+        void GetData(string query = null)
         {
             table = new DataTable();
-            string query = "Select * from ExpenditureTable order by [Date Purchase] desc";
-
+            if (query == null) query = "Select * from ExpenditureTable order by [Date Purchase] desc";
+            
             using (connection = new OleDbConnection())  //close connection when finish
             {
                 connection.ConnectionString = connectionString;
@@ -39,16 +39,9 @@ namespace Expenditure_Management
                 connection.Close();
             }
             dataGridView1.DataSource = table;
-            SumTxt.Text = "$" + CalculateSum().ToString();
-            RemainedCash.Text = "$"+ CalculateRemainer().ToString();
-        }
-
-        private double CalculateRemainer()
-        {
-            double remain = 0, Total;
-            Total = CalculateSum();
-            remain = Convert.ToDouble(InitialTxt.Text) - Total;
-            return remain;
+            double total = CalculateSum();
+            SumTxt.Text = "$" + total.ToString();
+            RemainedCash.Text = "$"+ CalculateRemainer(total).ToString();
         }
 
         private double CalculateSum()
@@ -58,7 +51,14 @@ namespace Expenditure_Management
             {
                 sum += Convert.ToDouble(this.dataGridView1.Rows[i].Cells[2].Value);
             }
-            return sum;
+            return Math.Round(sum,2);
+        }
+
+        private double CalculateRemainer(double total)
+        {
+            double remain = 0;
+            remain = Convert.ToDouble(InitialTxt.Text) - total;
+            return Math.Round(remain, 2);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -114,7 +114,7 @@ namespace Expenditure_Management
                     DataGridViewRow delrow = dataGridView1.Rows[i]; //point to a row
                     while (delrow.Selected == true)
                     {
-                        int RowId = Convert.ToInt32(delrow.Cells[0].Value);//Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                        int RowId = Convert.ToInt32(delrow.Cells[0].Value);
                         dataGridView1.Rows.RemoveAt(i);
                         try
                         {
@@ -150,8 +150,8 @@ namespace Expenditure_Management
         {
             try
             {
-                
-                RemainedCash.Text = "$" + CalculateRemainer().ToString();
+                double total = Convert.ToDouble(Total.Text);
+                RemainedCash.Text = "$" + CalculateRemainer(total).ToString();
             }
             catch (Exception ex)
             {
@@ -232,17 +232,7 @@ namespace Expenditure_Management
             try
             {
                 string query = "select * from ExpenditureTable where MONTH([Date Purchase]) = " + Convert.ToInt32(FilterByMonthTxt.Text);
-                using (connection = new OleDbConnection())  //close connection when finish
-                {
-                    connection.ConnectionString = connectionString;
-                    connection.Open();
-                    adapter = new OleDbDataAdapter(query, connection);
-
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-                    dataGridView1.DataSource = dt;
-                    connection.Close();
-                }
+                GetData(query);
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error); }

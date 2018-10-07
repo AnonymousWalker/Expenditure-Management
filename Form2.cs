@@ -13,7 +13,7 @@ namespace Expenditure_Management
 {
     public partial class Form2 : Form
     {
-        public delegate void Mydelg();
+        public delegate void Mydelg(string query = null);
         public Mydelg refGetAllItems;
         string query;
         public Form2()
