@@ -156,6 +156,7 @@
             this.CashBox.Name = "CashBox";
             this.CashBox.Size = new System.Drawing.Size(75, 27);
             this.CashBox.TabIndex = 1;
+            this.CashBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.CashBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CashBox_KeyDown);
             // 
             // ItemNameBox

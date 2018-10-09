@@ -25,10 +25,10 @@ namespace Expenditure_Management
             dataGridView1.RowHeadersDefaultCellStyle.Font = new Font("Calibri", 11);
         }
 
-        void GetData()
+        void GetData(string query = null)
         {
             table = new DataTable();
-            string query = "Select * from ExpenditureTable order by [Date Purchase] desc";
+            if (query == null) query = "Select * from ExpenditureTable order by [Date Purchase] desc";
 
             using (connection = new OleDbConnection())  //close connection when finish
             {
@@ -126,11 +126,11 @@ namespace Expenditure_Management
             }
             if (checkDel > 0)
             {
-                this.GetData();
+                GetData();
             }
             else if (dataGridView1.SelectedRows.Equals(null)) MessageBox.Show("Not removed :v", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             
-            GetData();
+            //GetData();
         }
         
 
@@ -138,12 +138,6 @@ namespace Expenditure_Management
         {
             GetData();
         }
-
-        private void FilterByDateTxt_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
 
         private void Total_Click(object sender, EventArgs e)
         {
@@ -176,17 +170,7 @@ namespace Expenditure_Management
             try
             {
                 string query = "select * from ExpenditureTable where MONTH([Date Purchase]) = " + Convert.ToInt32(FilterByMonthTxt.Text);
-                using (connection = new OleDbConnection())  //close connection when finish
-                {
-                    connection.ConnectionString = connectionString;
-                    connection.Open();
-                    adapter = new OleDbDataAdapter(query, connection);
-
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-                    dataGridView1.DataSource = dt;
-                    connection.Close();
-                }
+                GetData(query);
             }
             catch (Exception ex)
             { MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error); }
