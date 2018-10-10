@@ -40,8 +40,9 @@ namespace Expenditure_Management
             }
             dataGridView1.DataSource = table;
             double total = CalculateSum();
-            SumTxt.Text = "$" + total.ToString();
-            RemainedCash.Text = "$"+ CalculateRemainer(total).ToString();
+            double initial = double.Parse(InitialTxt.Text);
+            SumTxt.Text = total.ToString();
+            RemainedCash.Text = CalculateRemainer(initial,total).ToString();
         }
 
         private double CalculateSum()
@@ -54,10 +55,10 @@ namespace Expenditure_Management
             return Math.Round(sum,2);
         }
 
-        private double CalculateRemainer(double total)
+        private double CalculateRemainer(double initial, double total)
         {
             double remain = 0;
-            remain = Convert.ToDouble(InitialTxt.Text) - total;
+            remain = initial - total;
             return Math.Round(remain, 2);
         }
 
@@ -146,19 +147,7 @@ namespace Expenditure_Management
             GetData();
         }
 
-        private void InitialTxt_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                double total = Convert.ToDouble(Total.Text);
-                RemainedCash.Text = "$" + CalculateRemainer(total).ToString();
-            }
-            catch (Exception ex)
-            {
-                RemainedCash.Text = "0";
-            }
 
-        }
 
         private void FilterByDateTxt_TextChanged(object sender, EventArgs e)
         {
@@ -202,7 +191,7 @@ namespace Expenditure_Management
                 try
                 {
                     //DateTime inputDate = Convert.ToDateTime(FilterByDateTxt.Text);
-                    string query = "select * from ExpenditureTable where [Date Purchase] like '" + FilterByDateTxt.Text +"'";
+                    string query = "SELECT * FROM ExpenditureTable WHERE [Date Purchase]='" + FilterByDateTxt.Text +"'";
                     using (connection = new OleDbConnection())  //close connection when finish
                     {
                         connection.ConnectionString = connectionString;
@@ -239,5 +228,19 @@ namespace Expenditure_Management
 
         }
 
+        private void InitialTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter) return;
+            try
+            {
+                double total = double.Parse(SumTxt.Text);
+                double initial = double.Parse(InitialTxt.Text);
+                RemainedCash.Text = CalculateRemainer(initial,total).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

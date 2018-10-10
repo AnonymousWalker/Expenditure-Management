@@ -204,7 +204,7 @@
             this.InitialTxt.TabIndex = 3;
             this.InitialTxt.Text = "0";
             this.InitialTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.InitialTxt.TextChanged += new System.EventHandler(this.InitialTxt_TextChanged);
+            this.InitialTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.InitialTxt_KeyDown);
             // 
             // Edit
             // 
