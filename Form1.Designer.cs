@@ -44,6 +44,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.FilterByDateTxt = new System.Windows.Forms.TextBox();
             this.SumTxt = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.NameFilterTxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,7 +146,7 @@
             this.RefreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RefreshBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RefreshBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.RefreshBtn.Location = new System.Drawing.Point(550, 433);
+            this.RefreshBtn.Location = new System.Drawing.Point(550, 430);
             this.RefreshBtn.Name = "RefreshBtn";
             this.RefreshBtn.Size = new System.Drawing.Size(30, 30);
             this.RefreshBtn.TabIndex = 16;
@@ -156,7 +158,7 @@
             this.FilterByMonthTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.FilterByMonthTxt.BackColor = System.Drawing.Color.LavenderBlush;
             this.FilterByMonthTxt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.FilterByMonthTxt.Location = new System.Drawing.Point(141, 432);
+            this.FilterByMonthTxt.Location = new System.Drawing.Point(115, 432);
             this.FilterByMonthTxt.Name = "FilterByMonthTxt";
             this.FilterByMonthTxt.Size = new System.Drawing.Size(24, 26);
             this.FilterByMonthTxt.TabIndex = 4;
@@ -172,9 +174,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label1.Location = new System.Drawing.Point(9, 433);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 22);
+            this.label1.Size = new System.Drawing.Size(100, 22);
             this.label1.TabIndex = 20;
-            this.label1.Text = "Filter by month:";
+            this.label1.Text = "Month Filter";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -196,11 +198,11 @@
             // 
             this.InitialTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.InitialTxt.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.InitialTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.InitialTxt.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.InitialTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InitialTxt.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.InitialTxt.Location = new System.Drawing.Point(592, 296);
             this.InitialTxt.Name = "InitialTxt";
-            this.InitialTxt.Size = new System.Drawing.Size(89, 23);
+            this.InitialTxt.Size = new System.Drawing.Size(89, 24);
             this.InitialTxt.TabIndex = 3;
             this.InitialTxt.Text = "0";
             this.InitialTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -244,11 +246,11 @@
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(189, 433);
+            this.label4.Location = new System.Drawing.Point(149, 434);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 22);
+            this.label4.Size = new System.Drawing.Size(90, 22);
             this.label4.TabIndex = 26;
-            this.label4.Text = "Filter by date:";
+            this.label4.Text = "Date Filter";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FilterByDateTxt
@@ -256,7 +258,7 @@
             this.FilterByDateTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.FilterByDateTxt.BackColor = System.Drawing.Color.LavenderBlush;
             this.FilterByDateTxt.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.FilterByDateTxt.Location = new System.Drawing.Point(307, 432);
+            this.FilterByDateTxt.Location = new System.Drawing.Point(245, 433);
             this.FilterByDateTxt.Name = "FilterByDateTxt";
             this.FilterByDateTxt.Size = new System.Drawing.Size(78, 26);
             this.FilterByDateTxt.TabIndex = 5;
@@ -281,6 +283,31 @@
             this.SumTxt.Text = "0";
             this.SumTxt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.BackColor = System.Drawing.Color.LavenderBlush;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label5.Location = new System.Drawing.Point(334, 434);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 22);
+            this.label5.TabIndex = 28;
+            this.label5.Text = "Name Filter";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // NameFilterTxt
+            // 
+            this.NameFilterTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.NameFilterTxt.BackColor = System.Drawing.Color.LavenderBlush;
+            this.NameFilterTxt.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameFilterTxt.Location = new System.Drawing.Point(439, 432);
+            this.NameFilterTxt.Name = "NameFilterTxt";
+            this.NameFilterTxt.Size = new System.Drawing.Size(94, 26);
+            this.NameFilterTxt.TabIndex = 29;
+            this.NameFilterTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NameFilterTxt_KeyDown);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,6 +316,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(690, 461);
+            this.Controls.Add(this.NameFilterTxt);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.SumTxt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.FilterByDateTxt);
@@ -333,6 +362,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox FilterByDateTxt;
         private System.Windows.Forms.Label SumTxt;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox NameFilterTxt;
     }
 }
 

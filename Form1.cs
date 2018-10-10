@@ -196,6 +196,27 @@ namespace Expenditure_Management
                     {
                         connection.ConnectionString = connectionString;
                         connection.Open();
+                        #region Check result
+                        //OleDbCommand command = new OleDbCommand(query, connection);
+                        //OleDbDataReader reader = command.ExecuteReader();
+
+                        //while (reader.Read())
+                        //{
+                        //    string companyCode = reader.GetValue(0).ToString();
+                        //    string agentId = reader.GetString(1);
+                        //    string firstName = reader.GetString(2);
+                        //    string lastName = reader.GetString(3);
+                        //    string nameSuffix = reader.GetString(4);
+                        //    string corporateName = reader.GetString(5);
+                        //    string entityType = reader.GetString(6);
+                        //    string obfSSN = reader.GetString(7);
+                        //    string obfFEIN = reader.GetString(8);
+                        //    string dummyIndicator = reader.GetString(9);
+                        //    // Insert code to process data.
+                        //}
+                        //reader.Close();
+
+                        #endregion
                         adapter = new OleDbDataAdapter(query, connection);
 
                         DataTable dt = new DataTable();
@@ -236,6 +257,25 @@ namespace Expenditure_Management
                 double total = double.Parse(SumTxt.Text);
                 double initial = double.Parse(InitialTxt.Text);
                 RemainedCash.Text = CalculateRemainer(initial,total).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void NameFilterTxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter) return;
+            if (string.IsNullOrEmpty(NameFilterTxt.Text))
+            {
+                GetData();
+                return;
+            }
+            try
+            {
+                string query = "SELECT * FROM ExpenditureTable WHERE [Item] like '%" + NameFilterTxt.Text + "%'";
+                GetData(query);
             }
             catch (Exception ex)
             {
